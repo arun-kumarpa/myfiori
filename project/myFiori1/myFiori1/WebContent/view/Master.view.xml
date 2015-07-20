@@ -1,0 +1,78 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.Master"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page 
+		title="Projects"
+		showNavButton="true" >
+		
+		 <Toolbar>	
+				<SearchField search="handleSearch" width="100%" ></SearchField>
+		</Toolbar>
+			
+		
+		<!-- <headerContent>
+			<Toolbar>
+				
+				<SearchField search="handleSearch" width="100%" ></SearchField> 
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button icon="sap-icon://group-2"/>
+				<Button icon="sap-icon://action-settings"/>
+				</Toolbar>
+			
+		</headerContent> -->
+			
+			
+				<!-- <headerContent>
+				       <Toolbar>
+				  <Button icon="sap-icon://group-2"/>
+				   
+				  <ToolbarSpacer></ToolbarSpacer>   
+				  <Button icon="sap-icon://group-2"/>
+				  <Button icon="sap-icon://action-settings"/>
+				   </Toolbar>
+				</headerContent>  -->
+   
+   <!-- <subHeader>
+      <Toolbar>
+      <ToolbarSpacer></ToolbarSpacer>
+     <Label text="Manage Projects" class="sapUiSmallMarginBottom"/>
+     <ToolbarSpacer></ToolbarSpacer>
+      </Toolbar>
+    </subHeader> -->
+    
+			
+			
+		
+		<List
+		
+			items="{/NetworkOrderCollection}" >
+			<ObjectListItem type="Active" 
+			press="handleListItemPress" 
+			title="{Nname}"
+			number="{status}" 
+		    > <attributes> 
+			<ObjectAttribute text="{fdate}" /> 
+			</attributes>
+			
+			<attributes> 
+			<ObjectAttribute text="{Scenarios}" /> 
+			</attributes>
+			
+			  <firstStatus> 
+				<ObjectStatus text="{ path: 'LifecycleStatus', formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText' }" 
+				state="{ path: 'LifecycleStatus', formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState' }" />
+			</firstStatus>
+			 
+			 </ObjectListItem>
+		</List>
+		
+		<footer>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <Button icon="sap-icon://add" text="{/messagesLength}" type="Emphasized" press="handleMessagePopoverPress2" />
+        <ToolbarSpacer/>
+      </Toolbar>
+    </footer>
+	</Page>
+</core:View>
