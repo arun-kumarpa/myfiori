@@ -11,7 +11,7 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		
 		// create app
 		this.app = new sap.m.SplitApp();
-		
+		//comment added by soujanya
 		// load the master page
 		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.Master");
 		master.getController().nav = this.getController();
